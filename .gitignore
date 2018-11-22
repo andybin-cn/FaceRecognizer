@@ -1,0 +1,10 @@
+# Xcode
+#
+*.xcuserdatad
+*.pbxuser
+!default.pbxuser
+*.xccheckout
+
+
+# cocoaPods
+Facerecognizer/Pods
