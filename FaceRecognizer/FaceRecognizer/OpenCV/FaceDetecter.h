@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FaceDetecter : NSObject
 
+- (instancetype)initWithScale:(CGFloat)scale;
 -(NSArray<FaceDetectFeature*>*)detecterFrameWithMat:(cv::Mat&)frame;
 -(NSArray<FaceDetectFeature*>*)detecterFrameWithImage:(UIImage*)image;
 

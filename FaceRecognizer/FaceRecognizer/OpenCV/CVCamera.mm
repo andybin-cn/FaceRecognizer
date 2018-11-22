@@ -14,7 +14,6 @@ using namespace cv;
 @interface CVCamera () {
     
 }
-@property (nonatomic, assign) CGFloat scale;
 @property (nonatomic, strong) FaceDetecter* faceDetecter;
 
 @end
@@ -31,8 +30,7 @@ using namespace cv;
         self.videoCamera.defaultFPS = 30;
         self.videoCamera.grayscaleMode = NO;
         self.videoCamera.delegate = self;
-        self.scale = scale;
-        self.faceDetecter = [[FaceDetecter alloc] init];
+        self.faceDetecter = [[FaceDetecter alloc] initWithScale:scale];
     }
     
     return self;
