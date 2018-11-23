@@ -61,14 +61,14 @@ using namespace cv;
     int i = 0;
     double t = 0;
     
-    const static Scalar colors[] =  { CV_RGB(0,0,255),
-        CV_RGB(0,128,255),
-        CV_RGB(0,255,255),
-        CV_RGB(0,255,0),
-        CV_RGB(255,128,0),
-        CV_RGB(255,255,0),
-        CV_RGB(255,0,0),
-        CV_RGB(255,0,255)} ;
+//    const static Scalar colors[] =  { CV_RGB(0,0,255),
+//        CV_RGB(0,128,255),
+//        CV_RGB(0,255,255),
+//        CV_RGB(0,255,0),
+//        CV_RGB(255,128,0),
+//        CV_RGB(255,255,0),
+//        CV_RGB(255,0,0),
+//        CV_RGB(255,0,255)} ;
     Mat gray, smallImg( cvRound (frame.rows*self.scale), cvRound(frame.cols*self.scale), CV_8UC1 );
     
     cvtColor( frame, gray, COLOR_BGR2GRAY );
@@ -98,7 +98,7 @@ using namespace cv;
         
         cv::Mat smallImgROI = smallImg(*faceRect);
         cv::Point center;
-        Scalar color = colors[i%8];
+//        Scalar color = colors[i%8];
         std::vector<cv::Rect> nestedObjects;
         self->_eyeDetector.detectMultiScale( smallImgROI, nestedObjects,
                                             1.1, 2, 0,

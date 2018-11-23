@@ -20,6 +20,7 @@
 		38B30B5921A6836E00F3546F /* haarcascade_eye_tree_eyeglasses.xml in Resources */ = {isa = PBXBuildFile; fileRef = 38B30B5721A6836E00F3546F /* haarcascade_eye_tree_eyeglasses.xml */; };
 		38B30B5A21A6836E00F3546F /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 38B30B5821A6836E00F3546F /* haarcascade_frontalface_alt2.xml */; };
 		38B30B5D21A68D7D00F3546F /* CVCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38B30B5C21A68D7D00F3546F /* CVCamera.mm */; };
+		38F2AE3321A7FD7B002C467F /* APCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AE3221A7FD7B002C467F /* APCamera.swift */; };
 		656EB90DAB72D6BE4A00CD6E /* Pods_FaceRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465711DA13321283598856D4 /* Pods_FaceRecognizer.framework */; };
 		D06CAE3E860131A1A70DFAB8 /* Pods_FaceRecognizerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D95FF370F2C8C87D53FDA3 /* Pods_FaceRecognizerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		38B30B5821A6836E00F3546F /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
 		38B30B5B21A68D7D00F3546F /* CVCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVCamera.h; sourceTree = "<group>"; };
 		38B30B5C21A68D7D00F3546F /* CVCamera.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CVCamera.mm; sourceTree = "<group>"; };
+		38F2AE3221A7FD7B002C467F /* APCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APCamera.swift; sourceTree = "<group>"; };
 		465711DA13321283598856D4 /* Pods_FaceRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD9297EC0D1A50C0F0DAEFB /* Pods-FaceRecognizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceRecognizerTests/Pods-FaceRecognizerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAEB58C6B326E87B19F6F8E4 /* Pods-FaceRecognizerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognizerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceRecognizerUITests/Pods-FaceRecognizerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		385D252B21A64C020019D44B /* FaceRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				38F2AE3121A7FD24002C467F /* FaceDetector */,
 				38B30B4F21A672AA00F3546F /* OpenCV */,
 				385D252C21A64C020019D44B /* AppDelegate.swift */,
 				385D252E21A64C020019D44B /* ViewController.swift */,
@@ -171,6 +174,14 @@
 				38B30B5C21A68D7D00F3546F /* CVCamera.mm */,
 			);
 			path = OpenCV;
+			sourceTree = "<group>";
+		};
+		38F2AE3121A7FD24002C467F /* FaceDetector */ = {
+			isa = PBXGroup;
+			children = (
+				38F2AE3221A7FD7B002C467F /* APCamera.swift */,
+			);
+			path = FaceDetector;
 			sourceTree = "<group>";
 		};
 		3C34800D0A84D09FEFD6EA30 /* Pods */ = {
@@ -395,6 +406,7 @@
 				385D252D21A64C020019D44B /* AppDelegate.swift in Sources */,
 				38B30B5621A67A1F00F3546F /* FaceDetectFeature.m in Sources */,
 				38B30B5321A672D300F3546F /* FaceDetecter.mm in Sources */,
+				38F2AE3321A7FD7B002C467F /* APCamera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
