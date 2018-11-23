@@ -82,7 +82,14 @@ using namespace cv;
         NSLog(@"showFaceFrames result:%@", NSStringFromCGRect(faceFrame.faceFrame));
         NSLog(@"showFaceFrames result scale:%@", NSStringFromCGRect(imageRect));
         UIBezierPath *facePath = [UIBezierPath bezierPathWithRect:imageRect];
+        
         [facesFramePath appendPath:facePath];
+        if(!CGRectIsNull(faceFrame.leftEyeFrame)) {
+            [facesFramePath appendPath: [UIBezierPath bezierPathWithRect:faceFrame.leftEyeFrame]];
+        }
+        if(!CGRectIsNull(faceFrame.rightEyeFrame)) {
+            [facesFramePath appendPath: [UIBezierPath bezierPathWithRect:faceFrame.rightEyeFrame]];
+        }
     }
     self.faceLayer.path = facesFramePath.CGPath;
 }

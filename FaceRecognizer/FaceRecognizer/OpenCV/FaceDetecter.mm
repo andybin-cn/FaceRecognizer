@@ -106,8 +106,8 @@ using namespace cv;
         if(nestedObjects.size() != 2) {
             break;
         }
-        CGRect eye1 = CGRectMake(nestedObjects[0].x / self.scale, nestedObjects[0].y / self.scale, nestedObjects[0].width / self.scale, nestedObjects[0].height / self.scale);
-        CGRect eye2 = CGRectMake(nestedObjects[1].x / self.scale, nestedObjects[1].y / self.scale, nestedObjects[1].width / self.scale, nestedObjects[1].height / self.scale);
+        CGRect eye1 = CGRectMake(faceRect->x + nestedObjects[0].x / self.scale, faceRect->y + nestedObjects[0].y / self.scale, nestedObjects[0].width / self.scale, nestedObjects[0].height / self.scale);
+        CGRect eye2 = CGRectMake(faceRect->x + nestedObjects[1].x / self.scale, faceRect->y + nestedObjects[1].y / self.scale, nestedObjects[1].width / self.scale, nestedObjects[1].height / self.scale);
         if(eye1.origin.x < eye2.origin.x) {
             faceFeature.leftEyeFrame = eye1;
             faceFeature.rightEyeFrame = eye2;
