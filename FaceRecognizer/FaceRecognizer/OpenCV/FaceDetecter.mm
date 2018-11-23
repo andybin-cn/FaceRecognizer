@@ -5,10 +5,6 @@
 //  Created by andy.bin on 2018/11/22.
 //  Copyright © 2018 Binea. All rights reserved.
 //
-#ifdef __cplusplus
-#import <opencv2/opencv.hpp>
-#import <opencv2/imgcodecs/ios.h>
-#endif
 
 #import "FaceDetecter.h"
 
@@ -41,8 +37,7 @@ using namespace cv;
         CFStringGetFileSystemRepresentation( (CFStringRef)faceCascadePath, CASCADE_NAME, CASCADE_NAME_LEN);
         
         _faceDetector.load(CASCADE_NAME);
-        
-        free(CASCADE_NAME);
+
         
         
         
@@ -52,7 +47,9 @@ using namespace cv;
         CFStringGetFileSystemRepresentation( (CFStringRef)eyesCascadePath, CASCADE_NAME, CASCADE_NAME_LEN);
 
         _eyeDetector.load(CASCADE_NAME);
+        
         free(CASCADE_NAME);
+//        free(CASCADE_NAME);
     }
     
     return self;
@@ -72,7 +69,7 @@ using namespace cv;
         CV_RGB(255,255,0),
         CV_RGB(255,0,0),
         CV_RGB(255,0,255)} ;
-    Mat gray, smallImg( cvRound (frame.rows/self.scale), cvRound(frame.cols/self.scale), CV_8UC1 );
+    Mat gray, smallImg( cvRound (frame.rows*self.scale), cvRound(frame.cols*self.scale), CV_8UC1 );
     
     cvtColor( frame, gray, COLOR_BGR2GRAY );
     resize( gray, smallImg, smallImg.size(), 0, 0, INTER_LINEAR );
@@ -97,7 +94,7 @@ using namespace cv;
     for (std::vector<cv::Rect>::const_iterator faceRect = faces.begin(); faceRect != faces.end(); faceRect++ )
     {
         FaceDetectFeature* faceFeature = [[FaceDetectFeature alloc] init];
-        faceFeature.faceFrame = CGRectMake(faceRect->x * self.scale, faceRect->y * self.scale, faceRect->width * self.scale, faceRect->height * self.scale);
+        faceFeature.faceFrame = CGRectMake(faceRect->x / self.scale, faceRect->y / self.scale, faceRect->width / self.scale, faceRect->height / self.scale);
         
         cv::Mat smallImgROI = smallImg(*faceRect);
         cv::Point center;
@@ -109,8 +106,8 @@ using namespace cv;
         if(nestedObjects.size() != 2) {
             break;
         }
-        CGRect eye1 = CGRectMake(nestedObjects[0].x * self.scale, nestedObjects[0].y * self.scale, nestedObjects[0].width * self.scale, nestedObjects[0].height * self.scale);
-        CGRect eye2 = CGRectMake(nestedObjects[1].x * self.scale, nestedObjects[1].y * self.scale, nestedObjects[1].width * self.scale, nestedObjects[1].height * self.scale);
+        CGRect eye1 = CGRectMake(nestedObjects[0].x / self.scale, nestedObjects[0].y / self.scale, nestedObjects[0].width / self.scale, nestedObjects[0].height / self.scale);
+        CGRect eye2 = CGRectMake(nestedObjects[1].x / self.scale, nestedObjects[1].y / self.scale, nestedObjects[1].width / self.scale, nestedObjects[1].height / self.scale);
         if(eye1.origin.x < eye2.origin.x) {
             faceFeature.leftEyeFrame = eye1;
             faceFeature.rightEyeFrame = eye2;

@@ -9,10 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var camera: CVCamera!
+    var cameraView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.addSubview(cameraView)
+        cameraView.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 480, height: 640))
+        cameraView.center = self.view.center
+        cameraView.backgroundColor = .black
+        
+        camera = CVCamera(cameraView: cameraView, scale: 1)
+        
+        camera.startCapture()
     }
 
 

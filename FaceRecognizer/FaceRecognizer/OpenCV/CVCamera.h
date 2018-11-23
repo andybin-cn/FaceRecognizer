@@ -6,15 +6,14 @@
 //  Copyright © 2018 Binea. All rights reserved.
 //
 
-#import <opencv2/videoio/cap_ios.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CVCamera : NSObject <CvVideoCameraDelegate>
-@property (nonatomic, strong) CvVideoCamera* videoCamera;
+@interface CVCamera : NSObject
 
-- (instancetype)initWithCameraView:(UIImageView *)view scale:(CGFloat)scale;
+
+- (instancetype)initWithCameraView:(UIView *)view scale:(CGFloat)scale;
 
 - (void)startCapture;
 - (void)stopCapture;
