@@ -9,20 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var camera: CVCamera!
+//    var camera: CVCamera!
+    var camera: APCamera!
     var cameraView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.addSubview(cameraView)
-        cameraView.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 480, height: 640))
-        cameraView.center = self.view.center
+        cameraView.frame = self.view.bounds
+//        cameraView.center = self.view.center
         cameraView.backgroundColor = .black
+//
+//        camera = CVCamera(cameraView: cameraView, scale: 1)
+//        camera.startCapture()
         
-        camera = CVCamera(cameraView: cameraView, scale: 1)
-        
-        camera.startCapture()
+        camera = APCamera()
+        camera.previewView = cameraView
+        camera.prepare()
+        camera.startRuning()
     }
 
 
