@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2BFF2622B35E064D3182C75E /* Pods_FaceRecognizerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FFAFFD23059AC73D68A481 /* Pods_FaceRecognizerTests.framework */; };
+		36CCB94221AC2E24000258CD /* CVFaceRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36CCB94121AC2E24000258CD /* CVFaceRecognizer.mm */; };
+		36CCB94521AC2FEE000258CD /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36CCB94421AC2FEE000258CD /* UIImage+OpenCV.mm */; };
 		385D252D21A64C020019D44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D252C21A64C020019D44B /* AppDelegate.swift */; };
 		385D252F21A64C020019D44B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D252E21A64C020019D44B /* ViewController.swift */; };
 		385D253221A64C020019D44B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385D253021A64C020019D44B /* Main.storyboard */; };
@@ -46,6 +48,10 @@
 		01D95FF370F2C8C87D53FDA3 /* Pods_FaceRecognizerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceRecognizerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0402D7AAF0E11B2A1B5B9B70 /* Pods-FaceRecognizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceRecognizerTests/Pods-FaceRecognizerTests.release.xcconfig"; sourceTree = "<group>"; };
 		164B7D5175E53071BDA55FAC /* Pods-FaceRecognizerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognizerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceRecognizerUITests/Pods-FaceRecognizerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		36CCB94021AC2E24000258CD /* CVFaceRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVFaceRecognizer.h; sourceTree = "<group>"; };
+		36CCB94121AC2E24000258CD /* CVFaceRecognizer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CVFaceRecognizer.mm; sourceTree = "<group>"; };
+		36CCB94321AC2FEE000258CD /* UIImage+OpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		36CCB94421AC2FEE000258CD /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
 		385D252921A64C020019D44B /* FaceRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385D252C21A64C020019D44B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		385D252E21A64C020019D44B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +178,10 @@
 				38B30B5521A67A1F00F3546F /* FaceDetectFeature.m */,
 				38B30B5B21A68D7D00F3546F /* CVCamera.h */,
 				38B30B5C21A68D7D00F3546F /* CVCamera.mm */,
+				36CCB94021AC2E24000258CD /* CVFaceRecognizer.h */,
+				36CCB94121AC2E24000258CD /* CVFaceRecognizer.mm */,
+				36CCB94321AC2FEE000258CD /* UIImage+OpenCV.h */,
+				36CCB94421AC2FEE000258CD /* UIImage+OpenCV.mm */,
 			);
 			path = OpenCV;
 			sourceTree = "<group>";
@@ -403,6 +413,8 @@
 			files = (
 				38B30B5D21A68D7D00F3546F /* CVCamera.mm in Sources */,
 				385D252F21A64C020019D44B /* ViewController.swift in Sources */,
+				36CCB94521AC2FEE000258CD /* UIImage+OpenCV.mm in Sources */,
+				36CCB94221AC2E24000258CD /* CVFaceRecognizer.mm in Sources */,
 				385D252D21A64C020019D44B /* AppDelegate.swift in Sources */,
 				38B30B5621A67A1F00F3546F /* FaceDetectFeature.m in Sources */,
 				38B30B5321A672D300F3546F /* FaceDetecter.mm in Sources */,
