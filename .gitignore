@@ -1,6 +1,7 @@
 # Xcode
 #
 *.xcuserdatad
+xcshareddatad
 *.pbxuser
 !default.pbxuser
 *.xccheckout
